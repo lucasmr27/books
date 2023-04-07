@@ -1,7 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
-import time
+
 
 url = "http://books.toscrape.com/catalogue/page-1.html"
 
