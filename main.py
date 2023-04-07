@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
+import os
 
 
 url = "http://books.toscrape.com/catalogue/page-1.html"
@@ -28,6 +29,11 @@ while True:
 
 driver.quit()
 
-# Imprimir a lista de links
-for link in links:
-    print(link)
+# Criar a pasta "arquivos" se ela não existir
+if not os.path.exists('arquivos'):
+    os.mkdir('arquivos')
+
+# Escrever os links em um arquivo na pasta "arquivos"
+with open('arquivos/links.txt', 'w') as file:
+    for link in links:
+        file.write(link + '\n')
