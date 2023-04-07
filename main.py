@@ -9,21 +9,25 @@ driver = webdriver.Firefox()
 driver.get(url)
 soup = BeautifulSoup(driver.page_source, "html.parser")
 
-ultima_pagina = False
+links = []
 
-while(not ultima_pagina):
-    try:
-        # Extrair todos os links da página
-        for heading in soup.select('h3'):
-            for link in heading.select('a'):
-                print(link['href'])
-        # encontrar o elemento "next" pelo link de texto
-        next_link = driver.find_element(By.LINK_TEXT, 'next')
-        # obter o valor do atributo href do elemento "next"
-        next_url = next_link.get_attribute("href")
-        # navegar para a próxima página
-        driver.get(next_url)
+while True:
+    # Extrair todos os links de livro da página
+    product_links = soup.select('article > div > a')
+    for link in product_links:
+        links.append(link['href'])
+    
+    # Verificar se há mais páginas
+    next_links = driver.find_elements(By.LINK_TEXT, 'next')
+    if len(next_links) == 0:
+        break
+    
+    # Navegar para a próxima página
+    next_links[0].click()
+    soup = BeautifulSoup(driver.page_source, "html.parser")
 
-        soup = BeautifulSoup(driver.page_source, "html.parser")
-    except:
-        ultima_pagina = True
+driver.quit()
+
+# Imprimir a lista de links
+for link in links:
+    print(link)
