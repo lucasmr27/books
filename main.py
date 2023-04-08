@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import os
 
 
-url = "http://books.toscrape.com/catalogue/page-1.html"
+url = "http://books.toscrape.com/catalogue/page-48.html"
 
 driver = webdriver.Firefox()
 driver.get(url)
@@ -36,4 +36,4 @@ if not os.path.exists('arquivos'):
 # Escrever os links em um arquivo na pasta "arquivos"
 with open('arquivos/links.txt', 'w') as file:
     for link in links:
-        file.write(link + '\n')
+        file.write('http://books.toscrape.com/catalogue/' + link + '\n')
