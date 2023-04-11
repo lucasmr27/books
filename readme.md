@@ -9,6 +9,9 @@ O código faz a extração dos links de produtos do catálogo de livros do site 
 
 Para utilizar o código, é necessário ter o Python 3 instalado, juntamente com as bibliotecas Selenium e BeautifulSoup.
 
+Python 3.9.13
+selenium 4.8.3
+Beautiful Soup 4.11.1
 
 ### Instalando as bibliotecas
 

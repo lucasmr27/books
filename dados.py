@@ -21,6 +21,7 @@ with open('arquivos/dados.csv', mode='w', newline='') as file:
         # Utiliza o BeautifulSoup para extrair as informações da página
         soup = BeautifulSoup(driver.page_source, "html.parser")
         dados.append(soup.find("div", class_="col-sm-6 product_main").h1.string)  # Título do livro
+        dados.append(soup.select_one("ul.breadcrumb > li:nth-of-type(3) > a").text) # Categoria do livro
         dados.append(soup("p")[2]['class'][1])  # Nota do livro
         dados += [dado.text for dado in soup.select("tr > td")]  # Informações do livro em uma lista
 
