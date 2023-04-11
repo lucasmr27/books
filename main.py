@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import os
 
 
-url = "http://books.toscrape.com/catalogue/page-48.html"
+url = "http://books.toscrape.com/catalogue/page-1.html"
 
 driver = webdriver.Firefox()
 driver.get(url)

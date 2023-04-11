@@ -31,3 +31,6 @@ python main.py
 ```
 
 O código irá iniciar a extração dos links e salvá-los em um arquivo de texto na pasta "arquivos".
+
+## Referencias
+* [Proposta](https://medium.com/@meigarom/o-projeto-de-data-engineering-para-o-seu-portf%C3%B3lio-c186c7191823)
