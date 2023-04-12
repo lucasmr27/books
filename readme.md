@@ -1,39 +1,42 @@
-# Web Scraping de Catálogo de Livros usando Selenium e BeautifulSoup
+# Web Scraping de livros utilizando Selenium e BeautifulSoup
 
-Este é um exemplo simples de como fazer web scraping de um catálogo de livros utilizando as bibliotecas Selenium e BeautifulSoup em Python.
+Este projeto tem como objetivo realizar a extração de dados de livros do website [books.toscrape.com](http://books.toscrape.com/) utilizando a biblioteca Selenium em conjunto com o BeautifulSoup. Os dados extraídos são salvos em um arquivo CSV e posteriormente inseridos em um banco de dados PostgresSQL.
 
-O código faz a extração dos links de produtos do catálogo de livros do site [http://books.toscrape.com](http://books.toscrape.com/), navegando pelas páginas do catálogo e coletando os links de cada livro. Os links são armazenados em uma lista e, em seguida, são salvos em um arquivo de texto na pasta "arquivos" do projeto.
+## Pré-requisitos
 
+Para executar o projeto, é necessário ter o seguinte software instalado:
 
-## Como utilizar
+-   [Python 3](https://www.python.org/downloads/)
+-   [Selenium](https://selenium-python.readthedocs.io/installation.html)
+-   [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+-   [Psycopg2](https://pypi.org/project/psycopg2/)
 
-Para utilizar o código, é necessário ter o Python 3 instalado, juntamente com as bibliotecas Selenium e BeautifulSoup.
+Além disso, é necessário ter um banco de dados PostgresSQL configurado.
 
-Python 3.9.13
-selenium 4.8.3
-Beautiful Soup 4.11.1
+## Executando o projeto
 
-### Instalando as bibliotecas
+1.  Clone o repositório em sua máquina:
+        
+    `git clone https://github.com/lucasmr27/books.git`
+    
+2.  Instale as bibliotecas necessárias:
+    
+    `pip install -r requirements.txt`
+    
+3.  Configure as informações do banco de dados no arquivo `config.py`.
+    
+4.  Execute o primeiro script `captura_links.py` para capturar todos os links dos livros:
+    
+    `python captura_links.py`
+    
+5.  Execute o segundo script `extrai_dados.py` para extrair os dados dos livros e salvar em um arquivo CSV:
+    
+    `python extrai_dados.py`
+    
+6.  Execute o terceiro script `insere_bd.py` para inserir os dados no banco de dados PostgresSQL:
+    
+    `python insere_bd.py`
 
-Para instalar as bibliotecas, abra um terminal ou prompt de comando e execute os seguintes comandos:
-
-```
-pip install selenium
-```
-```
-pip install beautifulsoup4
-```
-
-
-### Executando o código
-
-Para executar o código, basta abrir o terminal ou prompt de comando e navegar até a pasta onde o arquivo `main.py` está localizado. Em seguida, execute o seguinte comando:
-
-```
-python main.py
-```
-
-O código irá iniciar a extração dos links e salvá-los em um arquivo de texto na pasta "arquivos".
 
 ### Referencias
 * [Proposta](https://medium.com/@meigarom/o-projeto-de-data-engineering-para-o-seu-portf%C3%B3lio-c186c7191823)
