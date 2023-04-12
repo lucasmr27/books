@@ -1,12 +1,13 @@
 import psycopg2
+import config
 import csv
 
 # Conecta-se ao banco de dados
 conn = psycopg2.connect(
-    host="localhost",
-    database="postgres",
-    user="postgres",
-    password="destrux2792"
+    host = config.host,
+    database = config.database,
+    user = config.user,
+    password = config.password
 )
 
 # Cria um cursor para executar comandos SQL

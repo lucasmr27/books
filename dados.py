@@ -35,7 +35,7 @@ with open('arquivos/dados.csv', mode='w', newline='') as file:
         dados.append(notas_dict[nota])
 
         dados += [dado.text for dado in soup.select("tr > td")]  # Informações do livro em uma lista
-
+        dados[8] = dados[8][10:12].strip() # Remove o texto deixando apenas a quantidade na coluna de estoque
         writer.writerow(dados)  # Salva os dados no arquivo CSV
 
 # Fecha o navegador Firefox
