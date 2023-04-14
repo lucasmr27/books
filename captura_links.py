@@ -4,7 +4,8 @@ from selenium.webdriver.common.by import By
 import os
 
 
-url = "http://books.toscrape.com/catalogue/page-1.html"
+url = "http://books.toscrape.com/catalogue/page-40.html"
+PATH = "/home/lucas/projetos/books/"
 
 driver = webdriver.Firefox()
 driver.get(url)
@@ -30,10 +31,10 @@ while True:
 driver.quit()
 
 # Criar a pasta "arquivos" se ela não existir
-if not os.path.exists('arquivos'):
-    os.mkdir('arquivos')
+if not os.path.exists(PATH + 'arquivos'):
+    os.mkdir(PATH + 'arquivos')
 
 # Escrever os links em um arquivo na pasta "arquivos"
-with open('arquivos/links.txt', 'w') as file:
+with open(PATH + 'arquivos/links.txt', 'w') as file:
     for link in links:
         file.write('http://books.toscrape.com/catalogue/' + link + '\n')

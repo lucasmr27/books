@@ -2,6 +2,8 @@ import psycopg2
 import config
 import csv
 
+PATH = "/home/lucas/projetos/books/"
+
 # Conecta-se ao banco de dados
 conn = psycopg2.connect(
     host = config.host,
@@ -17,7 +19,7 @@ cur = conn.cursor()
 cur.execute("TRUNCATE books")
 
 # Abre o arquivo CSV
-with open('arquivos/dados.csv', 'r') as f:
+with open(PATH + 'arquivos/dados.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         # Insere os dados na tabela

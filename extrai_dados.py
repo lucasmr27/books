@@ -4,13 +4,14 @@ import csv
 
 # Abre o navegador Firefox
 driver = webdriver.Firefox()
+PATH = "/home/lucas/projetos/books/"
 
 # Abre o arquivo com os links a serem extraídos
-with open('arquivos/links.txt', 'r') as file:
+with open(PATH + 'arquivos/links.txt', 'r') as file:
     links = file.readlines()
 
 # Cria o arquivo CSV para salvar os dados
-with open('arquivos/dados.csv', mode='w', newline='') as file:
+with open(PATH + 'arquivos/dados.csv', mode='w', newline='') as file:
     writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
     # Loop pelos links
