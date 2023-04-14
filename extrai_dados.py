@@ -36,6 +36,9 @@ with open('arquivos/dados.csv', mode='w', newline='') as file:
 
         dados += [dado.text for dado in soup.select("tr > td")]  # Informações do livro em uma lista
         dados[8] = dados[8][10:12].strip() # Remove o texto deixando apenas a quantidade na coluna de estoque
+        for i in range(5, 8):
+            dados[i] = dados[i][1:]
+
         writer.writerow(dados)  # Salva os dados no arquivo CSV
 
 # Fecha o navegador Firefox
