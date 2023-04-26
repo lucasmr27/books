@@ -32,9 +32,17 @@ Certifique-se de configurar o banco de dados PostgreSQL de acordo com o arquivo 
 
 Para executar o projeto manualmente, execute os seguintes comandos em ordem:
 
-`python collect_links.py python extract_data.py python load_data.py`
+~~~ 
+python captura_links.py
+~~~
+~~~
+python extrai_dados.py
+~~~
+~~~
+python insere_bd.py
+~~~
 
-Para executar o projeto com o Airflow, inicie o webserver do Airflow e adicione os dags `collect_links_dag.py`, `extract_data_dag.py` e `load_data_dag.py` na pasta `dags`.
+Para executar o projeto com o Airflow, inicie o webserver do Airflow e adicione a dag `web.py` na pasta `dags`.
 
 
 
