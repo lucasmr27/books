@@ -1,41 +1,41 @@
-# Web Scraping de livros utilizando Selenium e BeautifulSoup
+# Web Scraping de livros com Python e PostgreSQL
 
-Este projeto tem como objetivo realizar a extração de dados de livros do website [books.toscrape.com](http://books.toscrape.com/) utilizando a biblioteca Selenium em conjunto com o BeautifulSoup. Os dados extraídos são salvos em um arquivo CSV e posteriormente inseridos em um banco de dados PostgresSQL.
+Este projeto consiste em um conjunto de scripts Python para realizar web scraping de uma livraria online, armazenar os dados coletados em um banco de dados PostgreSQL e automatizar esse processo com o Airflow.
 
-## Pré-requisitos
+## Objetivo do projeto e por que ele é importante
 
-Para executar o projeto, é necessário ter o seguinte software instalado:
+O objetivo deste projeto é demonstrar habilidades em web scraping, banco de dados e automação com Airflow. A realização de web scraping é uma técnica importante para coletar dados de fontes online para análise e uso em vários projetos. O uso de um banco de dados permite armazenar grandes quantidades de dados de maneira organizada e eficiente para análise futura. A automação do processo com o Airflow aumenta a eficiência e a escalabilidade do projeto.
 
--   [Python 3](https://www.python.org/downloads/)
--   [Selenium](https://selenium-python.readthedocs.io/installation.html)
--   [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
--   [Psycopg2](https://pypi.org/project/psycopg2/)
+## Tecnologias utilizadas
 
-Além disso, é necessário ter um banco de dados PostgresSQL configurado.
+-   Python
+-   Selenium
+-   Beautiful Soup
+-   PostgreSQL
+-   Airflow
 
-## Executando o projeto
+## Funcionamento do projeto
 
-1.  Clone o repositório em sua máquina:
-        
-    `git clone https://github.com/lucasmr27/books.git`
-    
-2.  Instale as bibliotecas necessárias:
-    
-    `pip install -r requirements.txt`
-    
-3.  Configure as informações do banco de dados no arquivo `config.py`.
-    
-4.  Execute o primeiro script `captura_links.py` para capturar todos os links dos livros:
-    
-    `python captura_links.py`
-    
-5.  Execute o segundo script `extrai_dados.py` para extrair os dados dos livros e salvar em um arquivo CSV:
-    
-    `python extrai_dados.py`
-    
-6.  Execute o terceiro script `insere_bd.py` para inserir os dados no banco de dados PostgresSQL:
-    
-    `python insere_bd.py`
+O projeto consiste em três scripts Python. O primeiro script faz a coleta de links para cada livro na livraria online. O segundo script acessa cada link e extrai os dados de cada livro, salvando-os em um arquivo CSV. O terceiro script lê o arquivo CSV e insere os dados em uma tabela do banco de dados PostgreSQL.
+
+Para automatizar o processo, o Airflow é usado para agendar e executar os scripts em ordem uma vez por semana. O primeiro script é executado na segunda-feira, o segundo na terça-feira e o terceiro na quarta-feira.
+
+## Instalação
+
+Para instalar as dependências do projeto, execute o seguinte comando:
+
+`pip install -r requirements.txt`
+
+Certifique-se de configurar o banco de dados PostgreSQL de acordo com o arquivo `config.py`.
+
+## Como usar
+
+Para executar o projeto manualmente, execute os seguintes comandos em ordem:
+
+`python collect_links.py python extract_data.py python load_data.py`
+
+Para executar o projeto com o Airflow, inicie o webserver do Airflow e adicione os dags `collect_links_dag.py`, `extract_data_dag.py` e `load_data_dag.py` na pasta `dags`.
+
 
 
 ### Referencias
