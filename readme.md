@@ -18,7 +18,7 @@ O objetivo deste projeto é demonstrar habilidades em web scraping, banco de dad
 
 O projeto consiste em três scripts Python. O primeiro script faz a coleta de links para cada livro na livraria online. O segundo script acessa cada link e extrai os dados de cada livro, salvando-os em um arquivo CSV. O terceiro script lê o arquivo CSV e insere os dados em uma tabela do banco de dados PostgreSQL.
 
-Para automatizar o processo, o Airflow é usado para agendar e executar os scripts em ordem uma vez por semana. O primeiro script é executado na segunda-feira, o segundo na terça-feira e o terceiro na quarta-feira.
+Para automatizar o processo, o Airflow é utilizado para agendar e executar os scripts em ordem sequencial na segunda-feira de cada semana. O primeiro script é programado para ser executado às 9h, seguido pelo segundo e, em sequência, pelo terceiro, garantindo uma execução sem interrupções.
 
 ## Instalação
 
