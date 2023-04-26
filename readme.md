@@ -8,11 +8,12 @@ O objetivo deste projeto é demonstrar habilidades em web scraping, banco de dad
 
 ## Tecnologias utilizadas
 
--   Python
--   Selenium
--   Beautiful Soup
--   PostgreSQL
--   Airflow
+-   [Python](https://www.python.org/)
+-   [Selenium](https://www.selenium.dev/)
+-   [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
+-   [PostgreSQL](https://www.postgresql.org/)
+-   [Airflow](https://airflow.apache.org/)
+
 
 ## Funcionamento do projeto
 
@@ -46,5 +47,6 @@ Para executar o projeto com o Airflow, inicie o webserver do Airflow e adicione 
 
 
 
-### Referencias
+## Referencias
+
 * [Proposta](https://medium.com/@meigarom/o-projeto-de-data-engineering-para-o-seu-portf%C3%B3lio-c186c7191823)
